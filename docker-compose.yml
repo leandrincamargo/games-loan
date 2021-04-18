@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  gamesloan:
+    image: ${DOCKER_REGISTRY-}gamesloan
+    build:
+      context: .
+      dockerfile: GamesLoan/Dockerfile
+    depends_on:
+      - db
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "pa55w0rd!"
+        ACCEPT_EULA: "Y"
+    ports:
+      - "5434:1433"
