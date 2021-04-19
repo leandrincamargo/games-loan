@@ -21,7 +21,7 @@ What things you need to install the software and how to install them.
 - Docker
 - .NET 5 SDK
 
-### Installing
+## Usage <a name = "usage"></a>
 
 Run the below commands inside the main folder of this project.
 
@@ -35,4 +35,3 @@ docker-compose up -d
 
 After that, you can open the WebAPI on https://localhost:5000/swagger/index.html and connect the DB on 5434 port.
 
-## Usage <a name = "usage"></a>
