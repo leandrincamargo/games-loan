@@ -80,7 +80,7 @@ namespace GamesLoan.Api.Controllers
         {
             try
             {
-                var game = _gamesService.CreateGame(GetUserId(), name);
+                var game = _gamesService.CreateGame(name);
                 return Created($"Game: {game.Id}", new GameDtoResponse(game));
             }
             catch (ValidationException e)

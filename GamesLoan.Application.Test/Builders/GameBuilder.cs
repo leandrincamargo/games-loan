@@ -1,7 +1,7 @@
 ﻿using GamesLoan.Domain.Entities;
 using System;
 
-namespace GamesLoan.Domain.Test.Builders
+namespace GamesLoan.Application.Test.Builders
 {
     public class GameBuilder
     {
@@ -12,7 +12,7 @@ namespace GamesLoan.Domain.Test.Builders
             {
                 Name = "Test Game 123",
                 IsActive = true,
-                CreationDate = DateTime.Now.AddDays(-90)
+                CreationDate = DateTime.Now.AddDays(-90),
             };
             return game;
         }

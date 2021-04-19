@@ -13,7 +13,7 @@ namespace GamesLoan.Application.Services
         private readonly IGameRepository _repository;
         public GameService(IGameRepository repository) : base(repository) { _repository = repository; }
 
-        public Game CreateGame(int userId, string name)
+        public Game CreateGame(string name)
         {
             try
             {

@@ -6,11 +6,6 @@ namespace GamesLoan.Domain.Entities
 {
     public class User : IIdentityEntity
     {
-        public User()
-        {
-            this.Games = new HashSet<Game>();
-        }
-
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
@@ -22,7 +17,5 @@ namespace GamesLoan.Domain.Entities
         public string PhoneNumber { get; set; }
         public UserType Type { get; set; }
         public DateTime CreationDate { get; set; }
-
-        public virtual ICollection<Game> Games { get; set; }
     }
 }

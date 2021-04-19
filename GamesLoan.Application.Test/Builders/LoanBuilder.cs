@@ -1,7 +1,7 @@
 ﻿using GamesLoan.Domain.Entities;
 using System;
 
-namespace GamesLoan.Domain.Test.Builders
+namespace GamesLoan.Application.Test.Builders
 {
     public class LoanBuilder
     {

@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesLoan.Infrastructure.In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesLoan.Infrastructure.IoC", "GamesLoan.Infrastructure.IoC\GamesLoan.Infrastructure.IoC.csproj", "{3CF4A7DE-4ADC-4438-BDAE-0AB68D6E1094}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesLoan.Domain.Test", "GamesLoan.Domain.Test\GamesLoan.Domain.Test.csproj", "{ACCD4069-64F8-4A9E-A98E-8EB6BF23A553}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesLoan.Application.Test", "GamesLoan.Application.Test\GamesLoan.Application.Test.csproj", "{ACCD4069-64F8-4A9E-A98E-8EB6BF23A553}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BD986C39-ABB0-4A42-8F40-A6CF53E3D26B}"
 EndProject

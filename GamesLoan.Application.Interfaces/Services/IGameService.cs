@@ -6,7 +6,7 @@ namespace GamesLoan.Application.Interfaces.Services
 {
     public interface IGameService : IServiceBase<Game>
     {
-        Game CreateGame(int userId, string name);
+        Game CreateGame(string name);
         Game GetGame(int id);
         Game GetGame(string name);
         IEnumerable<Game> GetGames();
