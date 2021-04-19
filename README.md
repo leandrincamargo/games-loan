@@ -5,7 +5,6 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
 
 ## About <a name = "about"></a>
 
@@ -27,9 +26,13 @@ What things you need to install the software and how to install them.
 Run the below commands inside the main folder of this project.
 
 ```
-docker-compose run gamesloan
+docker-compose build
 ```
 
-After that, you can open the WebAPI on https://localhost/ and connect the DB on 5434 port.
+```
+docker-compose up -d
+```
+
+After that, you can open the WebAPI on https://localhost:5000/swagger/index.html and connect the DB on 5434 port.
 
 ## Usage <a name = "usage"></a>

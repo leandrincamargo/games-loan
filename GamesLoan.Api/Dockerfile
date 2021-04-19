@@ -1,0 +1,29 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY ["GamesLoan.Api/GamesLoan.Api.csproj", "GamesLoan.Api/"]
+COPY ["GamesLoan.Infrastructure.IoC/GamesLoan.Infrastructure.IoC.csproj", "GamesLoan.Infrastructure.IoC/"]
+COPY ["GamesLoan.Infrastructure/GamesLoan.Infrastructure.csproj", "GamesLoan.Infrastructure/"]
+COPY ["GamesLoan.Infrastructure.Interfaces/GamesLoan.Infrastructure.Interfaces.csproj", "GamesLoan.Infrastructure.Interfaces/"]
+COPY ["GamesLoan.Domain/GamesLoan.Domain.csproj", "GamesLoan.Domain/"]
+COPY ["GamesLoan.Application.IoC/GamesLoan.Application.IoC.csproj", "GamesLoan.Application.IoC/"]
+COPY ["GamesLoan.Application/GamesLoan.Application.csproj", "GamesLoan.Application/"]
+COPY ["GamesLoan.Application.Interfaces/GamesLoan.Application.Interfaces.csproj", "GamesLoan.Application.Interfaces/"]
+RUN dotnet restore "GamesLoan.Api/GamesLoan.Api.csproj"
+COPY . .
+WORKDIR "/src/GamesLoan.Api"
+RUN dotnet build "GamesLoan.Api.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "GamesLoan.Api.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "GamesLoan.Api.dll"]
